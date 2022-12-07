@@ -44,15 +44,15 @@ pub fn day_one_solutions(input: String) -> SolutionPair {
     elves.reverse();
 
     let solution_one: u64 = elves[0].get_calories();
-    let solution_two: u64 = 0;
+    let solution_two: u64 = solution_one + elves[1].get_calories() + elves[2].get_calories();
 
     (Solution::U64(solution_one), Solution::U64(solution_two))
 
 }
 
 /*
-\\ Testing for day 1 (currently broken, need to fix the PartialOrd problem) 
-\\ Run with `cargo test 1`
+// Testing for day 1 (currently broken, need to fix the PartialOrd problem) 
+// Run with `cargo test 1`
 #[test]
 fn test() {
     // Set up the file I/O
@@ -63,7 +63,7 @@ fn test() {
     let (solution_one, solution_two) = day_one_solutions(input);
 
     assert_eq!(solution_one, Solution::U64(24000));
-    assert_eq!(solution_two, Solution::U64(0));
+    assert_eq!(solution_two, Solution::U64(45000));
 }
 */
 
